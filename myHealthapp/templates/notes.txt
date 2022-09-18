@@ -1,1 +1,4 @@
-Put this in a div to center the Element class = "mx-auto"... it worked great for the card on homepage!
+1. Put this in a div to center the Element class = "mx-auto"... it worked great for the card on homepage!
+
+2. Add this to requirements to avoid error while deploying:  pypiwin32==223; platform_system == "Windows" 
+
