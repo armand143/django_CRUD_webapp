@@ -1,0 +1,1 @@
+Put this in a div to center the Element class = "mx-auto"... it worked great for the card on homepage!

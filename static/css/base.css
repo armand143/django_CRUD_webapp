@@ -1,0 +1,231 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+li, a, button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: edf0f1;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 25%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    display: inline-block;
+    background: white;
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+
+ol > li::marker {
+font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 3px;
+    color: white;
+  }
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    width: 100%;
+
+}
+
+#bg{
+    background-repeat: no-repeat;
+    background-size: 1800px 900px;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+.card {
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 10px; 
+}
+
+.navbar{
+    width: 100%;
+
+}
+ */
+
+ #bg{
+    background-repeat: no-repeat;
+    background-size: 1800px 900px;
+    background-position: top;
+    background-attachment: fixed;
+}
+ 
+ .spacer {
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    text-align: left;
+    font-size: 30px;
+  }
+  #sitename {
+    padding: 30px 100px;
+    color: aliceblue;
+    background-color: rgb(0, 194, 194);
+    font-size: 40px;
+    text-align: center;
+  }
+  .logo {
+    width: 120px;
+    height: 80px;
+    cursor: pointer;
+    margin: 0px, 0px, 0px, 10px;
+  }
+  .logo:hover {
+    border: 1px groove transparent;
+  }
+  .simplebutton {
+    background-color: rgb(0, 194, 194);
+  }
+  .simplebutton:hover {
+    border: 1px groove rgb(75, 75, 75);
+    background-color: rgb(0, 212, 212);
+    color: white;
+  }
+  nav {
+    padding: 5px;
+    margin: 0 0 20px;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    background-color: rgb(0, 194, 194);
+    color: rgba(0, 0, 0, 0.288);
+  }
+  nav a:hover {
+    color: white;
+  }
+  a {
+    color:darkslategrey;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-decoration: none;
+  }
+  th {
+    font-size: 18px;
+  }
+  .close {
+    padding: 7px 17px;
+    background-color: lightsalmon;
+  }
+  .close:hover {
+    background-color: #f44336;
+  }
+  html {
+    position: relative; /* relative positioning to help positioning the footer */
+    min-height: 100%; /* set min-height to help positioning the footer */
+  }
+  body {
+    margin-bottom: 55px; 	/* height of the footer must be specified as margin */
+    /*   background-color: rgb(245, 245, 245);*/
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(22, 21, 21, 0.2);
+  }
+  .footer a:hover {
+    color: white;
+  }
+  .table-head-button:hover {
+    color: rgba(5, 7, 8, 0.438);
+  }
+  .dropdown-item {
+    background-color: black;
+    color: white;
+    text-align: left;
+  }
+  .dropdown-item:hover {
+    font-weight: bold;
+
+  }
+  .dropdown-item-text {
+    background-color: white;
+  }
+  /* menu block */
+  .menu {
+    display: inline-block;
+    cursor: pointer;
+  }
+  .menuBar1, .menuBar2, .menuBar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+
+  #returnBtn:hover {
+    color:white;
+  }
+  #text {
+    font-size: 18px;
+  }
+  .center {
+    margin: auto;
+    padding: 10px;
+  }
+  .max600 {
+    max-width: 600px;
+  }
+  .round {
+    border-radius: 3rem;
+  }
+
+  .blue {
+    background-color: rgb(0, 194, 194);
+    color: white;
+  }
+  .blueBlack {
+    background-color: rgb(0, 194, 194);
+    color: Black;
+  }
+  .w35px {
+    width: 35px;
+  }
+  #headTitle {
+      color:rgb(0, 194, 194);
+      padding: 30px 100px;
+      font-size: 60px;
+      text-align: center;
+    }
+  .noHover {
+    pointer-events: none;
+  }
+
+  .form-control{
+    padding: 5px;
+    background-color: rgba(177, 177, 177, .8);
+    color: black;
+    border: none;
+    border-radius: 8px;
+ }
+
+ header{
+    background-color: rgba(22, 21, 21, 0.2);
+ }

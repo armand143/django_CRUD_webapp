@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<title> kontakt </title>
+
+<header class="text-dark" style="margin-bottom: 50px">
+    <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start pb-4 pb-lg-0">
+            <a class="nav-link" href="{% url 'homepage' %}">
+                <img class="logo" src="{% static 'images/logo.svg' %}" alt="logo" />
+            </a>
+
+            <div class="nav col-12 col-lg-auto me-lg-auto justify-content-center ">
+                <a class="nav-link text-dark" href="{% url 'homepage' %}"> Startseite</a>
+            </div>
+
+            <a class="nav-link text-dark" href="{% url 'allPosts' %}">Texte</a>            
+            <a class="nav-item text-dark" href="{% url 'contact' %}">Kontakt</a> 
+
+            <form class="col-12 col-lg-auto  me-lg-3" role="search">
+                <input class="form-control form-control-dark text-white bg-gray" name="suche" type="search"
+                    placeholder="search for..." aria-lable="Search">
+            </form>
+
+            <div class="text-end">
+                <div class="dropdown">
+                    <div id="dropdownMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="menuBar1" style="background-color:white"></div>
+                        <div class="menuBar2" style="background-color:white"></div>
+                        <div class="menuBar3" style="background-color:white"></div>
+                        <div class="menuBar4" style="background-color:white"></div>
+                    </div>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu">
+                        <span class="dropdown-item-text">logged in: {{request.user}}</span>
+                        <a class="dropdown-item" href="{% url 'addPost' %}">Add Posts</a>
+                        <a class="dropdown-item" href="#">Musik</a>
+                        <a class="dropdown-item" href="#">CDs</a>
+                        <a class="dropdown-item" href="#">Register</a>
+                        <a class="dropdown-item" href="#">Login</a>
+                        <a class="dropdown-item" href="#">Logout</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container text-center">
+    <h1>  Ich freue mich auf deine Nachricht! </h1>
+</div>
+
+
+<div class="container">
+    <form id="contact-form" role="form" action="#" method="POST">
+        {% csrf_token %}
+        <div class="controls">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group" style="font-family: Georgia">
+                        <label for="form_name">Vorname *</label>
+                        <input id="form_name" type="text" name="first_name" class="form-control"
+                            placeholder="" required="required" data-error="Firstname is required.">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" style="font-family: Georgia">
+                        <label for="form_lastname">Nachname *</label>
+                        <input id="form_lastname" type="text" name="last_name" class="form-control"
+                            placeholder="" required="required" data-error="Lastname is required.">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group" style="font-family: Georgia">
+                        <label for="form_email">Email *</label>
+                        <input id="form_email" type="email" name="email" class="form-control"
+                            placeholder="" required="required"
+                            data-error="Valid email is required.">
+
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group" style="font-family: Georgia">
+                        <label for="form_email">Betreff *</label>
+                        <input id="form_email" type="text" name="betreff" class="form-control"
+                            placeholder="" required="required"
+                            data-error="betreff nötig">
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12" style="font-family: Georgia">
+                    <div class="form-group" style="font-family: Georgia">
+                        <label for="form_message">Nachricht *</label>
+                        <textarea id="form_message" name="nachricht" class="form-control"
+                            placeholder="Deine Nachricht hier." rows="4" required="required"
+                            data-error="Please, leave us a message."></textarea>
+                    </div>
+                </div>
+
+                &nbsp
+                <div class="col-md-12 text-center">
+                    <input type="submit" class="btn btn-success btn-send  pt-2 btn-block"
+                        style="font-family: Georgia" value="Senden">
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>
+</div>
+
+
+{% endblock body %}

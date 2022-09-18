@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<title>Edit Profile</title>
+<div class="container text-center">
+    <h1> Edit Profile </h1>
+</div>
+
+<div class="card card-body">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-secondary btn-sm" value="update">
+        <a class="btn btn-danger btn-sm" href="#" role="button">Abbrechen</a>
+    </form>
+</div>
+
+<div class="col-md-6">
+    <img src="{{request.user.superuser.profile_img.url}}">
+</div>
+
+{% for users in all_U %}
+{{users.user}}
+{% endfor %}
+
+{% endblock %}

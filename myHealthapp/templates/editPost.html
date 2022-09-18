@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<title>Welcome</title>
+<div class="container text-center">
+    <h1> Willkommen </h1>
+</div>
+
+<div class="d-flex justify-content-center">
+    <form class = "col-8" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type = "submit" class="btn btn-secondary btn-sm" value = "Speichern" >
+        <a class="btn btn-danger btn-sm" href="#" role="button">Abbrechen</a>
+    
+    </form>
+</div>
+
+
+
+
+
+{% endblock %}

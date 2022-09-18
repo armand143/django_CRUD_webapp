@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<title>Login</title>
+<div class = "container text-center">
+    <h1> Login </h1>
+</div>
+
+<div>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-secondary"> Login </button>
+        <a class="btn btn-danger btn-sm" href="#" role="button">Abbrechen</a>
+    
+    </form>
+</div>
+
+
+
+
+
+
+{% endblock %}
