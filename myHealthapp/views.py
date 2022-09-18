@@ -106,17 +106,23 @@ def contact(request):
         data = {
             'Betreff': betreff,
             'Email-Adresse' : email,
-            'Name' : vorname ,
+            'Vorname' : vorname ,
+            'Nachname' : nachname,
             'Nachricht' : nachricht,
             
         }
 
         message = """ 
-        New message: {}
+        Namen: {} {}
+
+        Nachricht: {}
 
         From: {}
-        """.format(data['Nachricht'], data['Email-Adresse'])
+        """.format(data['Vorname'], data['Nachname'], data['Nachricht'], data['Email-Adresse'])
         send_mail(data['Betreff'], message, '', ['developmenttest31@gmail.com'])
         print(data)
 
     return render(request, 'contact.html', context)
+
+def therapieangebot(request):
+    return render(request, 'therapieangebot.html', {})

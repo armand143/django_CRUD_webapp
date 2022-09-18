@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load embed_video_tags %}
-
 
 {% block body %}
-<title>Texte</title>  
+<title>Welcome</title>
 
 <header class="text-dark" style="margin-bottom: 50px">
     <div class="container">
@@ -51,39 +49,52 @@
 </header>
 
 <div class="container text-center">
-    <h1> Texte </h1>
-</div>
-
-<div class="container-fluid d-flex justify-content-left ">
-    <ol>
-        {% for obj in lib %}
-        <li>
-            <div class="card " style="width: 70%; background-color:white;">
-                <div class="card-body">
-                    <h2 class="card-title">
-                        {{obj.title}}
-                        <!-- <a class="btn btn-warning btn-sm" href="{% url 'deletePost' obj.id %}" role="button">&#9747</a>
-                        <a class="btn btn-primary btn-sm" href="{% url 'editPost' obj.id %}" role="button">&#9747</a>  -->
-                        <h6 class = "font-italic text-muted"> {{obj.createdOn}} </h6>
-                    </h2>
-                  
-                  <!-- {% video obj.url '626x400' %}  -->
-                  <p class="card-text">  
-                    {% video obj.url '626x400' %}  <br>  
-                      {{ obj.body }}
-                    <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
-                    </p>
-                  <a href="#" class="btn btn-dark">Komposition hören</a>
-                </div>
-            </div> <br>
-
-        </li>
-        {% endfor %}
-    </ol>
+    <h1> Therapie </h1>
 
 
 </div>
 
+<div>
 
+    <div class="card mx-auto" style="width: 60%;">
+        <div class="card-body">
+          <h5 class="card-title">Selbst Liebe</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Liebe und Selbst</h6>
+          <p class="card-text"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+            eirmod tempor invidunt ut
+            labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
+            dolores et
+            ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+            Lorem ipsum
+            dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et
+            dolore
+            magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+            Stet
+            clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor
+            sit
+            amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+            magna
+            aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+            clita
+            kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel
+            illum
+            dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit
+            praesent
+            luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet,
+            consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna
+            aliquam
+            erat volutpat.</p>
+          <a href="{% url 'contact' %}" class="btn btn-dark btn-sm" role="button">Vereinbare jetzt einen Termin</a>
+
+        </div>
+      </div>
+
+    <br>
+    <hr>
+
+
+</div>
 
 {% endblock body %}
