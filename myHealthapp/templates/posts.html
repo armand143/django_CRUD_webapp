@@ -56,32 +56,54 @@
 
 <div class="container-fluid d-flex justify-content-left ">
     <ol>
-        {% for obj in lib %}
         <li>
             <div class="card " style="width: 70%; background-color:white;">
                 <div class="card-body">
                     <h2 class="card-title">
-                        {{obj.title}}
-                        <!-- <a class="btn btn-warning btn-sm" href="{% url 'deletePost' obj.id %}" role="button">&#9747</a>
-                        <a class="btn btn-primary btn-sm" href="{% url 'editPost' obj.id %}" role="button">&#9747</a>  -->
-                        <h6 class = "font-italic text-muted"> {{obj.createdOn}} </h6>
+                        Liebe und Selbst
+                        <h6 class = "font-italic text-muted"> 2022-09-19 </h6>
                     </h2>
                   
                   <!-- {% video obj.url '626x400' %}  -->
                   <p class="card-text">  
-                    {% video obj.url '626x400' %}  <br>  
-                      {{ obj.body }}
-                    <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
+                    {% video 'https://www.youtube.com/watch?v=wjAeCkNrEg0' '626x400' %}  <br>  
+                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
                     </p>
                   <a href="#" class="btn btn-dark">Komposition hören</a>
                 </div>
-            </div> <br>
-
+            </div>
         </li>
-        {% endfor %}
+
+&nbsp;
+        <li>
+            <ul>
+                {% for obj in lib %}
+                <li>
+                    <div class="card " style="width: 70%; background-color:white;">
+                        <div class="card-body">
+                            <h2 class="card-title">
+                                {{obj.title}}
+                                <!-- <a class="btn btn-warning btn-sm" href="{% url 'deletePost' obj.id %}" role="button">&#9747</a>
+                                <a class="btn btn-primary btn-sm" href="{% url 'editPost' obj.id %}" role="button">&#9747</a>  -->
+                                <h6 class = "font-italic text-muted"> {{obj.createdOn}} </h6>
+                            </h2>
+                          
+                          <!-- {% video obj.url '626x400' %}  -->
+                          <p class="card-text">  
+                            {% video obj.url '626x400' %}  <br>  
+                              {{ obj.body }}
+                            <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
+                            </p>
+                          <a href="#" class="btn btn-dark">Komposition hören</a>
+                        </div>
+                    </div> <br>
+        
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+
     </ol>
-
-
 </div>
 
 

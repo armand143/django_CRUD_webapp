@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-6f!y@4i(m@6r7^^ej6-m1p)(c!=mrng59mxeor^u&q^tszei9s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['stefanj.herokuapp.com']
+ALLOWED_HOSTS = ['stefanj.herokuapp.com', '*']
 
 
 # Application definition
@@ -101,8 +101,8 @@ DATABASES = {
     }
 }
 
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 
 # Password validation
@@ -171,8 +171,8 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 
 
-DATABASE_URL = os.environ['DATABASE_URL']
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+# DATABASE_URL = os.environ['DATABASE_URL']
+# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 
 
