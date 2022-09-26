@@ -34,7 +34,6 @@ ALLOWED_HOSTS = ['stefanj.herokuapp.com', '*']
 # Application definition
 
 INSTALLED_APPS = [
-    'jquery',
     'superUser',
     'embed_video',
     'myHealthapp',
@@ -48,7 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-#    "whitenoise.middleware.WhiteNoiseMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -92,17 +91,17 @@ WSGI_APPLICATION = 'healthsite.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'healthsite',
-#         'USER': 'postgres',
-#         'PASSWORD': '1200000qQ',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'healthsite',
+        'USER': 'postgres',
+        'PASSWORD': '1200000qQ',
+        'HOST': 'localhost',
+        'PORT': '5432'
 
-#     }
-# }
+    }
+}
 
 
 #activate this part for deployment and deactivate the other database setting(directly above)
@@ -154,7 +153,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-#STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 
 # Default primary key field type

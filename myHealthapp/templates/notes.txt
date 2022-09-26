@@ -24,3 +24,5 @@ toml==0.10.2
 tzdata==2022.2
 urllib3==1.26.12
 whitenoise==6.2.0
+
+3. When deploying(to Production) set DEBUG's value from True to False (in settings)
