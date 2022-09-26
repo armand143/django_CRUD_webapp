@@ -57,83 +57,48 @@
 </div>
 
 <div class="container-fluid d-flex justify-content-left ">
-    <!-- <ol> -->
-        <!-- <li>
+    <ol>
+        {% for obj in lib %}
+        <li>
+            <!-- {% if is_mobile %}
+            {% else %}
+            {% endif %} -->
             <div class="card " style="width: 70%; background-color:white;">
                 <div class="card-body">
-
                     <h2 class="card-title">
-                        Liebe und Selbst
-                        <h6 class="font-italic text-muted"> 2022-09-19 </h6>
+                        {{obj.title}}
+                        <a class="btn btn-warning btn-sm" href="{% url 'deletePost' obj.id %}"
+                            role="button">&#9747</a>
+                        <a class="btn btn-primary btn-sm" href="{% url 'editPost' obj.id %}"
+                            role="button">&#9747</a>
+                        <h6 class="font-italic text-muted"> {{obj.createdOn}} </h6>
                     </h2>
 
+                    <!-- {% video obj.url '626x400' %}  -->
+                    {% if is_mobile %}
                     <p class="card-text">
-                        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
-                        ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-                        dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
-                        sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
-                        invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                        justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-                        ipsum dolor sit amet.
+                        {% video obj.url '300x290' %} <br>
+                        {{ obj.body }}
+                        <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
                     </p>
-                    <a href="#watchModal" class="btn btn-outline-dark " data-bs-toggle="modal">
-                        Siehe Video
-                    </a>
-                    <a class="btn btn-dark">Komposition hören</a>
-
-
-                </div>
-            </div>
-        </li>
-
-        &nbsp; -->
-        <!-- <li> -->
-            <ol>
-                {% for obj in lib %}
-                <li>
-                    <!-- {% if is_mobile %}
                     {% else %}
-                    {% endif %} -->
-                    <div class="card " style="width: 70%; background-color:white;">
-                        <div class="card-body">
-                            <h2 class="card-title">
-                                {{obj.title}}
-                                <a class="btn btn-warning btn-sm" href="{% url 'deletePost' obj.id %}"
-                                    role="button">&#9747</a>
-                                <a class="btn btn-primary btn-sm" href="{% url 'editPost' obj.id %}"
-                                    role="button">&#9747</a>
-                                <h6 class="font-italic text-muted"> {{obj.createdOn}} </h6>
-                            </h2>
+                    <p class="card-text">
+                        {% video obj.url '526x500' %} <br>
+                        {{ obj.body }}
+                        <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
+                    </p>
+                    {% endif %}
+                    <a href="{{ obj.audio_link}}" class="btn btn-dark">Komposition hören</a>
+                    <audio controls preload="auto">
+                        <source src="{% if obj.audio %} {{ obj.audio.url }} {% endif %}" type="audio/mp3">
+                    </audio>
+                </div>
+            </div> <br>
 
-                            <!-- {% video obj.url '626x400' %}  -->
-                            {% if is_mobile %}
-                            <p class="card-text">
-                                {% video obj.url '300x290' %} <br>
-                                {{ obj.body }}
-                                <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
-                            </p>
-                            {% else %}
-                            <p class="card-text">
-                                {% video obj.url '526x500' %} <br>
-                                {{ obj.body }}
-                                <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
-                            </p>
-                            {% endif %}
-                            <a href="{{ obj.audio_link}}" class="btn btn-dark">Komposition hören</a>
-                            <audio controls preload="auto">
-                                <source src="{% if obj.audio %} {{ obj.audio.url }} {% endif %}" type="audio/mp3">
-                            </audio>
-                        </div>
-                    </div> <br>
-
-                </li>
-                {% endfor %}
-            </ol>
-        <!-- </li> -->
-
-    <!-- </ol> -->
+        </li>
+        {% endfor %}
+    </ol>
 </div>
-
 
 
 {% endblock body %}
