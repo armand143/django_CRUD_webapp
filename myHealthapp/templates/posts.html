@@ -88,7 +88,7 @@
 
         &nbsp; -->
         <!-- <li> -->
-            <ul>
+            <ol>
                 {% for obj in lib %}
                 <li>
                     <!-- {% if is_mobile %}
@@ -108,13 +108,13 @@
                             <!-- {% video obj.url '626x400' %}  -->
                             {% if is_mobile %}
                             <p class="card-text">
-                                {% video obj.url '420x290' %} <br>
+                                {% video obj.url '300x290' %} <br>
                                 {{ obj.body }}
                                 <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
                             </p>
                             {% else %}
                             <p class="card-text">
-                                {% video obj.url '626x500' %} <br>
+                                {% video obj.url '526x500' %} <br>
                                 {{ obj.body }}
                                 <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
                             </p>
@@ -128,7 +128,7 @@
 
                 </li>
                 {% endfor %}
-            </ul>
+            </ol>
         <!-- </li> -->
 
     <!-- </ol> -->
