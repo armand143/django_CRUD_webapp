@@ -26,3 +26,5 @@ urllib3==1.26.12
 whitenoise==6.2.0
 
 3. When deploying(to Production) set DEBUG's value from True to False (in settings)
+
+4. refer to healthsite_beta1 for settings.py configs before deploying

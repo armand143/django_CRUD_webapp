@@ -57,33 +57,17 @@
 </div>
 
 <div class="container-fluid d-flex justify-content-left ">
-    <ol>
-        <li>
+    <!-- <ol> -->
+        <!-- <li>
             <div class="card " style="width: 70%; background-color:white;">
                 <div class="card-body">
-
-                    <!-- <iframe style="border-radius:12px"
-                        src="https://open.spotify.com/embed/track/3Zau3JcrZcBfw8aVjKGkSX?utm_source=generator"
-                        width="100%" height="152" frameBorder="0" allowfullscreen=""
-                        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                        loading="lazy">
-                    </iframe>
-                    <div
-                        style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-                        <a href="https://soundcloud.com/lolollov2" title="lolovvveee2" target="_blank"
-                            style="color: #cccccc; text-decoration: none;">lolovvveee2</a> · <a
-                            href="https://soundcloud.com/lolollov2/sets/cosy-night-autumn" title="cosy night autumn"
-                            target="_blank" style="color: #cccccc; text-decoration: none;">cosy night autumn</a>
-                    </div> -->
 
                     <h2 class="card-title">
                         Liebe und Selbst
                         <h6 class="font-italic text-muted"> 2022-09-19 </h6>
                     </h2>
 
-                    <!-- {% video obj.url '626x400' %}  -->
                     <p class="card-text">
-                        <!-- {% video 'https://www.youtube.com/watch?v=wjAeCkNrEg0' '60%x 90%' %}  -->
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt
                         ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
                         dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor
@@ -102,11 +86,14 @@
             </div>
         </li>
 
-        &nbsp;
-        <li>
+        &nbsp; -->
+        <!-- <li> -->
             <ul>
                 {% for obj in lib %}
                 <li>
+                    <!-- {% if is_mobile %}
+                    {% else %}
+                    {% endif %} -->
                     <div class="card " style="width: 70%; background-color:white;">
                         <div class="card-body">
                             <h2 class="card-title">
@@ -127,7 +114,7 @@
                             </p>
                             {% else %}
                             <p class="card-text">
-                                {% video obj.url '626x700' %} <br>
+                                {% video obj.url '626x500' %} <br>
                                 {{ obj.body }}
                                 <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
                             </p>
@@ -142,9 +129,9 @@
                 </li>
                 {% endfor %}
             </ul>
-        </li>
+        <!-- </li> -->
 
-    </ol>
+    <!-- </ol> -->
 </div>
 
 
