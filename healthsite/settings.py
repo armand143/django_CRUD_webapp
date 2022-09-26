@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['stefanj.herokuapp.com', '*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jquery',
     'superUser',
     'embed_video',
     'myHealthapp',
@@ -55,6 +56,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+
 
 ROOT_URLCONF = 'healthsite.urls'
 
@@ -89,17 +92,17 @@ WSGI_APPLICATION = 'healthsite.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'healthsite',
-        'USER': 'postgres',
-        'PASSWORD': '1200000qQ',
-        'HOST': 'localhost',
-        'PORT': '5432'
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'healthsite',
+#         'USER': 'postgres',
+#         'PASSWORD': '1200000qQ',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
 
-    }
-}
+#     }
+# }
 
 import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)

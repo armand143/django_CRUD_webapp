@@ -14,9 +14,9 @@
                 <a class="nav-item" href="{% url 'homepage' %}"> Startseite</a>
             </div>
 
-            <a class="nav-item " href="{% url 'allPosts' %}">Texte</a> 
-            <a class="nav-item " href="{% url 'contact' %}">Kontakt</a>            
-            <a class="nav-item " href="{% url 'therapieangebot' %}">Therapieangebot</a> 
+            <a class="nav-item " href="{% url 'allPosts' %}">Texte</a>
+            <a class="nav-item " href="{% url 'contact' %}">Kontakt</a>
+            <a class="nav-item " href="{% url 'therapieangebot' %}">Therapieangebot</a>
 
             <form class="col-12 col-lg-auto  me-lg-3" role="search">
                 <input class="form-control form-control-dark text-white bg-gray" name="suche" type="search"
@@ -40,17 +40,29 @@
                         <a class="dropdown-item" href="#">Login</a>
                         <a class="dropdown-item" href="#">Logout</a>
                     </div> -->
-                </div>
+                    </div>
 
+                </div>
             </div>
         </div>
-    </div>
 </header>
 
-<div class="container text-center">
-    <h1>  Ich freue mich auf deine Nachricht! </h1>
-</div>
+{% if messages %}
+    <div class="card mx-auto" style="width: 20rem; background-color: rgb(106, 199, 106);">
+        <div class="card-body">
+            <ul class="messages">
+                {% for message in messages %}
+                <li class="{{ message.tags }}"><h5> {{ message }} </h5> </li>
+                {% endfor %}
+            </ul> 
+        </div>
+  </div>
 
+{% endif %}
+
+<div class="container text-center">
+    <h1> Ich freue mich auf deine Nachricht! </h1>
+</div>
 
 <div class="container">
     <form id="contact-form" role="form" action="#" method="POST">
@@ -60,15 +72,15 @@
                 <div class="col-md-6">
                     <div class="form-group" style="font-family: Georgia">
                         <label for="form_name">Vorname *</label>
-                        <input id="form_name" type="text" name="vorname" class="form-control"
-                            placeholder="" required="required" data-error="Firstname is required.">
+                        <input id="form_name" type="text" name="vorname" class="form-control" placeholder=""
+                            required="required" data-error="Firstname is required.">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group" style="font-family: Georgia">
                         <label for="form_lastname">Nachname *</label>
-                        <input id="form_lastname" type="text" name="nachname" class="form-control"
-                            placeholder="" required="required" data-error="Lastname is required.">
+                        <input id="form_lastname" type="text" name="nachname" class="form-control" placeholder=""
+                            required="required" data-error="Lastname is required.">
                     </div>
                 </div>
             </div>
@@ -76,18 +88,16 @@
                 <div class="col-md-6">
                     <div class="form-group" style="font-family: Georgia">
                         <label for="form_email">Email *</label>
-                        <input id="form_email" type="email" name="email" class="form-control"
-                            placeholder="" required="required"
-                            data-error="Valid email is required.">
+                        <input id="form_email" type="email" name="email" class="form-control" placeholder=""
+                            required="required" data-error="Valid email is required.">
 
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="form-group" style="font-family: Georgia">
                         <label for="form_email">Betreff *</label>
-                        <input id="form_email" type="text" name="betreff" class="form-control"
-                            placeholder="" required="required"
-                            data-error="betreff nötig">
+                        <input id="form_email" type="text" name="betreff" class="form-control" placeholder=""
+                            required="required" data-error="betreff nötig">
 
                     </div>
                 </div>
@@ -102,11 +112,28 @@
                     </div>
                 </div>
 
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Erfolgreich gesendet</button> -->
+
                 &nbsp
+
                 <div class="col-md-12 text-center">
-                    <input type="submit" class="btn btn-success btn-send  pt-2 btn-block"
-                        style="font-family: Georgia" value="Senden">
+                    <input type="submit" class="btn btn-success btn-send  pt-2 btn-block" style="font-family: Georgia"
+                        value="Senden">
                 </div>
+
+                <!-- {% if pop_up == False %}
+                    <div class="col-md-12 text-center">
+                        <a type = "submit" href="#erfolg" style="font-family: Georgia" class="btn btn-success btn-send " data-bs-toggle="modal">
+                            Sendene
+                        </a>
+                    </div>
+                {% else %}
+                    <div class="col-md-12 text-center">
+                        <input type="submit" class="btn btn-success btn-send  pt-2 btn-block"
+                            style="font-family: Georgia" value="Senden" >
+                    </div>
+                {% endif %} -->
+
 
             </div>
         </div>

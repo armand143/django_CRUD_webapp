@@ -7,11 +7,14 @@ from .models import posts, superuser
 class postForm(ModelForm):
     class Meta:
         model = posts
-        fields = ["title", "body", "url"]
+        fields = ["title", "body", "url", "audio_link", "audio"]
         widgets = {
             'title': forms.TextInput(attrs= {'class': 'form-control'}),
             'body': forms.Textarea(attrs= {'class': 'form-control'}),
             'url': forms.TextInput(attrs= {'class': 'form-control'}),
+            'audio_link': forms.TextInput(attrs= {'class': 'form-control'}),
+
+
         }
 
 
