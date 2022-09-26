@@ -60,7 +60,7 @@
         {% csrf_token %}
         {{ form.as_p }}
         <input type = "submit" class="btn btn-secondary btn-sm" value = "Speichern" >
-        <a class="btn btn-danger btn-sm" href="#" role="button">Abbrechen</a>
+        <a class="btn btn-danger btn-sm" href="{% url 'allPosts' %}" role="button">Abbrechen</a>
     
     </form>
 </div>
