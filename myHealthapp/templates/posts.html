@@ -21,10 +21,10 @@
             <a class="nav-item " href="{% url 'contact' %}">Kontakt</a>
             <a class="nav-item " href="{% url 'therapieangebot' %}">Therapieangebot</a>
 
-            <form class="col-12 col-lg-auto  me-lg-3" role="search">
+            <!-- <form class="col-12 col-lg-auto  me-lg-3" role="search">
                 <input class="form-control form-control-dark text-white bg-gray" name="suche" type="search"
                     placeholder="search for..." aria-lable="Search">
-            </form>
+            </form> -->
 
             <div class="text-end">
                 <div class="dropdown">
@@ -85,10 +85,10 @@
                         <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
                     </p>
                     {% endif %}
-                    <a href="{{ obj.audio_link}}" class="btn btn-dark">Komposition hören</a>
-                    <audio controls preload="auto">
+                    <a href="{{ obj.audio_link}}" class="btn btn-dark">Komposition auf Spotify hören</a>
+                    <!-- <audio controls preload="auto">
                         <source src="{% if obj.audio %} {{ obj.audio.url }} {% endif %}" type="audio/mp3">
-                    </audio>
+                    </audio> -->
                 </div>
             </div> <br>
 
