@@ -21,7 +21,7 @@ def registration(request):
         form = RegistrationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('login')
+            return redirect('log_in')
         else:
             messages.error(request, "Dein Passwort muss mindestens 8 Zeichen enthalten.")
             messages.error(request, "Die Passwörter müssen übereinstimmen")
