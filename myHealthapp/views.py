@@ -53,6 +53,17 @@ def allPosts(request):
     return render(request, 'posts.html', all_posts_lib)
 
 
+def tagesBuch(request):
+    all_posts = posts.objects.order_by('-createdOn')
+    if mobile(request):
+        is_mobile = True
+    else:
+        is_mobile = False
+
+    all_posts_lib = {'lib': all_posts, 'is_mobile': is_mobile}
+    return render(request, 'tagesbuch.html', all_posts_lib)
+
+
 def deletePost(request, p_id):
     dead_post = posts.objects.get(pk=p_id)
     dead_post.delete()
@@ -155,3 +166,6 @@ def mobile(request):
         return True
     else:
         return False
+
+def impressum(request):
+    return render(request, 'Impressum.html', {}) 

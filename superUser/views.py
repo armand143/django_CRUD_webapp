@@ -5,7 +5,8 @@ from django.views import generic
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
-from .forms import RegistrationForm
+from .forms import LoginForm, RegistrationForm
+from django.contrib import messages
 
 # class Registration(generic.CreateView):
 #     form_class = RegistrationForm(request.POST)
@@ -16,16 +17,40 @@ from .forms import RegistrationForm
 def registration(request):
     form = RegistrationForm()
 
-    if request.method == 'POST' and form.is_valid():
+    if request.method == 'POST':
         form = RegistrationForm(request.POST)
-        form.save()
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+        else:
+            messages.error(request, "Dein Passwort muss mindestens 8 Zeichen enthalten.")
+            messages.error(request, "Die Passwörter müssen übereinstimmen")
 
-        return redirect('login')
-    
     context = {'form': form}
     return render(request, "registration/register.html", context)
 
-#def loginPage(request):
+
+def log_in(request):
+    form = LoginForm()
+    if request.method == "POST":
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            if username == 'admin':
+                return redirect('allPosts')
+            else:
+                return redirect('homepage')
+        else:
+            messages.error(request, "Name oder Passwort ist falsch.")
+    # return redirect('login')
+    context = {'form': form}
+    return render(request, "registration/login.html", context)
+
+
+# def loginPage(request):
 
 
 

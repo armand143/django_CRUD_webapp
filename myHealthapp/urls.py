@@ -13,6 +13,9 @@ urlpatterns = [
     path('editProfile', views.editProfile, name='editProfile'),
     path('contact', views.contact, name='contact'),
     path('therapieangebot', views.therapieangebot, name='therapieangebot'),
+    path('tagesbuch', views.tagesBuch, name='tagesbuch'),
+    path('impressum', views.impressum, name='impressum'),
+
 
 
 ]
