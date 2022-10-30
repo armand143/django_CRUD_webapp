@@ -59,18 +59,6 @@
 
 <div class="container-fluid d-flex justify-content-left">
     <ol>
-        <li>
-            <div class="card" style="width: 100%; background-color:white;">
-                <div class="card-body">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZqpSb5p1xQo"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen>
-                    </iframe>
-                </div>
-
-            </div>
-        </li> <br> <hr>
         {% for obj in lib %}
         <li>
             <div class="card " style="width: 100%; background-color:white;">
@@ -113,7 +101,7 @@
                         <source src="{% if obj.audio %} {{ obj.audio.url }} {% endif %}" type="audio/mp3">
                     </audio> -->
                 </div>
-            </div> <br>
+            </div> <br> <hr>
 
         </li>
         {% endfor %}
