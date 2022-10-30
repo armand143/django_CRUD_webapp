@@ -91,17 +91,17 @@ WSGI_APPLICATION = 'healthsite.wsgi.application'
 #     }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'healthsite',
-#         'USER': 'postgres',
-#         'PASSWORD': '1200000qQ',
-#         'HOST': 'localhost',
-#         'PORT': '5432'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'healthsite',
+        'USER': 'postgres',
+        'PASSWORD': '1200000qQ',
+        'HOST': 'localhost',
+        'PORT': '5432'
 
-#     }
-# }
+    }
+}
 
 
 #activate this part for deployment and deactivate the other database setting(directly above)
