@@ -44,7 +44,7 @@
             <form role = "form" method="POST" action = "{% url 'log_in' %}">
                 {% csrf_token %}
                 {{form}}
-                {% csrf_token %}
+
                 <br>
             <div class="text-center">
                 <button type="submit" class="btn-sm btn-primary">Login</button>

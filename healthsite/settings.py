@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-6f!y@4i(m@6r7^^ej6-m1p)(c!=mrng59mxeor^u&q^tszei9s
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['stefanj.herokuapp.com', 'web-production-a7ce.up.railway.app']
+ALLOWED_HOSTS = ['stefanj.herokuapp.com', 'web-production-a7ce.up.railway.app', '*']
 
 
 # Application definition
@@ -91,17 +91,17 @@ WSGI_APPLICATION = 'healthsite.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'healthsite',
-        'USER': 'postgres',
-        'PASSWORD': '1200000qQ',
-        'HOST': 'localhost',
-        'PORT': '5432'
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'healthsite',
+#         'USER': 'postgres',
+#         'PASSWORD': '1200000qQ',
+#         'HOST': 'localhost',
+#         'PORT': '5432'
 
-    }
-}
+#     }
+# }
 
 
 #activate this part for deployment and deactivate the other database setting(directly above)
