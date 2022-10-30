@@ -31,6 +31,7 @@ def addPost(request):
         newestPost = posts.objects.filter(title=form.cleaned_data.get("title"))[0]
         newestPost.createdOn = str(datetime.now())[:10]
         #createdOnDate = str((datetime.now()).strftime("%Y-%m-%d"))
+        newestPost.url = slicer(request, newestPost.url)
         newestPost.save()
         all_posts = posts.objects.all()
         posts_lib = {'lib': all_posts,
@@ -169,3 +170,11 @@ def mobile(request):
 
 def impressum(request):
     return render(request, 'Impressum.html', {}) 
+
+
+def slicer(request, url):
+    url_length = len(url)
+    for l in range(url_length):
+        if (url[l] == "v" and url[l+1] == "="):
+            vid_id = "https://www.youtube.com/embed/" + str(url[(l+2):])
+            return vid_id

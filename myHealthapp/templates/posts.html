@@ -40,33 +40,45 @@
                         <a class="dropdown-item" href="#">Musik</a> -->
                         <a class="dropdown-item" href="{% url 'therapieangebot' %}">Therapieangebot</a>
                         <a class="dropdown-item" href="{% url 'addPost' %}">neuer Beitrag</a>
-                        <a class="dropdown-item" href="#">CDs</a> 
+                        <a class="dropdown-item" href="#">CDs</a>
                         <a class="dropdown-item" href="{% url 'logout' %}">Ausloggen</a>
                     </div>
-                    </div>
-
                 </div>
+
             </div>
         </div>
+    </div>
 </header>
 
 <div class="container">
-    <h2><strong>Eingeloggt:</strong> 
-        <div class="btn btn-info btn-lg noHover round" >{{user}}</div>
-    </h2> 
+    <h2><strong>Eingeloggt:</strong>
+        <div class="btn btn-info btn-lg noHover round">{{user}}</div>
+    </h2>
 </div>
 
 
 <div class="container-fluid d-flex justify-content-left">
     <ol>
+        <li>
+            <div class="card" style="width: 100%; background-color:white;">
+                <div class="card-body">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ZqpSb5p1xQo"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                    </iframe>
+                </div>
+
+            </div>
+        </li> <br> <hr>
         {% for obj in lib %}
         <li>
             <div class="card " style="width: 100%; background-color:white;">
                 <div class="card-body">
                     <h2 class="card-title">
                         {{obj.title}}
-                        <a class="btn btn-warning btn-sm" href="{% url 'deletePost' obj.id %}"
-                            role="button">&#9747 löschen</a>
+                        <a class="btn btn-warning btn-sm" href="{% url 'deletePost' obj.id %}" role="button">&#9747
+                            löschen</a>
                         <a class="btn btn-primary btn-sm" href="{% url 'editPost' obj.id %}"
                             role="button">bearbeiten</a>
                         <h6 class="font-italic text-muted"> {{obj.createdOn}} </h6>
@@ -75,14 +87,28 @@
                     <!-- {% video obj.url '626x400' %}  -->
                     {% if is_mobile %}
                     <p class="card-text">
-                        {% video obj.url '300x290' %} <br>
+                        <iframe width="560" height="315" src="{{obj.url}}" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                        <!-- {% video obj.url '300x290' %} <br> -->
+                        <br>
                         {{ obj.body }}
+                        <br>
+                        {{obj.url}}
                         <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
                     </p>
                     {% else %}
                     <p class="card-text">
-                        {% video obj.url '726x500' %} <br>
-                        {{ obj.body }}
+                        <iframe width="560" height="315" src= "{{obj.url}}" title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                        <!-- {% video obj.url '726x500' %} <br> -->
+                        <br>
+                        {{ obj.body }} 
+                        <br>
+                        {{obj.url}}
                         <!-- Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. -->
                     </p>
                     {% endif %}
