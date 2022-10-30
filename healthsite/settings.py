@@ -109,7 +109,7 @@ import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 #need this for deployment on railway
-CSRF_TRUSTED_ORIGINS = ['https://*web-production-a7ce.up.railway.app/']
+CSRF_TRUSTED_ORIGINS = ['https://*.web-production-a7ce.up.railway.app/']
 
 
 # Password validation
