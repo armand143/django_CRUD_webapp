@@ -88,7 +88,26 @@ def editPost(request, p_id):
     if request.method == "POST":
         edit_form = postForm(request.POST or None, request.FILES, instance=post)
         if edit_form.is_valid:  
+            adjust_vid_link = slicer(request, request.POST.get("url"))
+            
+            print("********************************************************")
+            print(post.url)
+
+            print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+            print(adjust_vid_link)
+            post.url = adjust_vid_link
+            post.save()
+
+            edit_form.url = adjust_vid_link
+            print("************************editFORMvalue********************************")
+            print(edit_form["url"])
+
+            print("**********************FINAL**********************************")
+            print(post.url)
+
             edit_form.save()
+
+
             contextt = {
                 'all_posts': posts.objects.all(),
 
