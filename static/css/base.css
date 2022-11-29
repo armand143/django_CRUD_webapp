@@ -71,6 +71,7 @@ nav ul {
  #bg{
   background-repeat: no-repeat;
   /* background-size: 1800px 900px; */
+  background-size: cover;
   background-position: top;
   background-attachment: fixed;
 }
